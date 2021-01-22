@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.security'
 ]
 
 MIDDLEWARE = [
@@ -76,11 +77,11 @@ WSGI_APPLICATION = '_config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'RegisterTaskDB',
+        'NAME': 'RegisterTaskBD',
         'USER': 'YourUser',
         'PASSWORD': 'YourPassword',
         'HOST': 'YourHost',
-        'PORT': 'YourtPort'
+        'PORT': 'YourPort'
     }
 }
 
