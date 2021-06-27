@@ -1,25 +1,31 @@
-from django.contrib.auth import authenticate
-from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from forms.security.LoginForm import LoginForm
 # Create your views here.
 
+title = "Register Task"
+
 
 def index(request):
 
-    form = LoginForm()
     if request.method == 'POST':
-        form = LoginForm(request.POST)
-
-        if form.is_valid():
-            user = authenticate(username=form.cleaned_data['username'], password=form.cleaned_data["password"])
-            print(user)
+        try :
+            data = request.POST
+            user = authenticate(username=data['username'], password=data["password"])
             if user is not None:
+                login(request, user)
                 print("Login success")
+                return HttpResponseRedirect('/task/')
             else:
                 print("You didn't login")
+                return render(request, 'security/login.html', )
+        except :
+            print("Error:")
 
-            return HttpResponseRedirect('/login/')
+    return render(request, 'security/login.html', )
 
-    return render(request, 'security/login.html', {'form': form})
 
+def logout_session(request):
+    logout(request)
+    return HttpResponseRedirect('/login/')

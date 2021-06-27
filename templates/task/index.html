@@ -1,0 +1,22 @@
+{% extends 'base/base-dashboard.html' %}
+{% block main %}
+<label for="">Task</label>
+<input type="button" value="Add" onclick="location.href='{% url 'newTask' %}'">
+<label for="" value="Logout"></label>
+<input type="submit" value="Logout" onclick="location.href='{% url 'logout'  %}'" >
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Task</th>
+        <th>Task</th>
+        <th>Date</th>
+        <th>User</th>
+    </tr>
+    </td>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+{% endblock %}v

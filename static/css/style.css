@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.card-login {
+
+}
+.card-login--center{
+    margin: 150px auto;
+}
+
+.login-form {
+    display: flex;
+    width: 250px;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-form--center {
+     margin: 50px auto;
+}
+
+.login-form__input {
+    margin: 2em 0;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
